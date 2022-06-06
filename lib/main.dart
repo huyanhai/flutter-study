@@ -1,22 +1,12 @@
 import 'package:flutter/material.dart';
+// import 'package:english_words/english_words.dart';
+import 'package:my_app/home/main.dart';
+import 'package:my_app/store/demo.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "demo",
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("app bar"),
-        ),
-        body: const Center(child: Text("xxx")),
-      ),
-    );
-  }
+  runApp(ChangeNotifierProvider(
+    create: (context) => Demo(),
+    child: const HomePage(),
+  ));
 }
